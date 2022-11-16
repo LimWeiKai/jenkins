@@ -4,11 +4,13 @@ require 'login.php';
 
 class loginTest extends TestCase {
 
-	public $userInstance;
-	
-	public function testIfLoginSuccess() {
+	public function testIfLoginSuccess(): void {
 		
-		$this->userInstance->checkAccount("ben", "ben23");
+		$this->assertTrue(checkAccount("ben", "ben23"));
 		
 	}
+	public function testIfLoginUnsuccessful(): void {
+		$this->assertFalse(checkAccount("admin", "admin"));
+	}
 }
+?>
