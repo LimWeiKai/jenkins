@@ -6,11 +6,6 @@ class loginTest extends TestCase {
 
 	public $userInstance;
 	
-	public function setup():void {
-		
-		$this->userInstance;
-	}
-	
 	public function testIfLoginSuccess() {
 		
 		$this->userInstance->checkAccount("ben", "ben23");
