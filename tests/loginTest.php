@@ -8,7 +8,7 @@ class loginTest extends TestCase {
 	
 	public function setup():void {
 		
-		$this->userInstance = new login();
+		$this->userInstance;
 	}
 	
 	public function testIfLoginSuccess() {
