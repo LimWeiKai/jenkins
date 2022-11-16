@@ -6,22 +6,36 @@
 $uid = $_POST['userid'];
 $pw = $_POST['password'];
  
-if($uid == 'ben' and $pw == 'ben23')
-{    
-    session_start();
-    $_SESSION['sid']=session_id();
-    echo "Logged in successfully";
+function checkAccount($username, $password){
+	if ($username == "ben" && $password == "ben23") {
+		global $response;
+		$response = true;
+		return true;
+	}
+	else {
+		global $response;
+		$response = false;
+		return false;
+	}
 }
-elseif ($pw=='password'){
-	echo 'password cannot be password';
-}
-else{
-	echo "smth is wrong";
-}
+
+checkAccount($uid, $pw);
+
+	if($response == true){
+		session_start();
+		echo "welcome, ", $uid;
+	}
+	else{
+		echo "loser";
+	
+	}
+
 
 ?>
 
+<div>
 <button><a href="logout.php">Logout</a></button>
+</div>
 
 </body>
 </html>
